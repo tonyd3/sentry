@@ -1,10 +1,7 @@
 from datetime import UTC, datetime, timedelta
 
 from sentry.models.groupredirect import GroupRedirect
-from sentry.services.eventstore.query_preprocessing import (
-    _get_all_related_redirects_query,
-    get_all_merged_group_ids,
-)
+from sentry.services.eventstore.query_preprocessing import get_all_merged_group_ids
 from sentry.testutils.cases import TestCase
 from sentry.testutils.skips import requires_snuba
 
@@ -32,13 +29,6 @@ class TestQueryPreprocessing(TestCase):
             previous_group_id=self.g2.id,
             date_added=datetime.now(UTC) - timedelta(hours=1),
         )
-
-    def test_get_all_related_groups_query(self) -> None:
-        """
-        What we want is for this to return the newest redirects first.
-        What we're technically doing is taking the redirects with the highest IDs.
-        """
-        assert _get_all_related_redirects_query({self.g1.id})[0] == (self.g1.id, self.g2.id)
 
     def test_get_all_merged_group_ids(self) -> None:
         assert get_all_merged_group_ids([self.g1.id]) == {self.g1.id, self.g2.id, self.g3.id}
