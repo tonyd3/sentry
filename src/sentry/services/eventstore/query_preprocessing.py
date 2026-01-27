@@ -1,7 +1,7 @@
 from collections import defaultdict
 from collections.abc import Iterable, Mapping
 from datetime import UTC, datetime, timedelta
-from typing import Anyyy
+from typing import Any
 
 import sentry_sdk
 from django.core.cache import cache
