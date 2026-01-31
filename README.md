@@ -1,3 +1,13 @@
+<!-- Dedup E2E 2026-01-31T00:55:47Z -->
+<!-- L2 -->
+<!-- L3 -->
+<!-- L4 -->
+<!-- L5 -->
+<!-- L6 -->
+<!-- L7 -->
+<!-- L8 -->
+<!-- L9 -->
+<!-- L10 -->
 <p align="center">
   <p align="center">
     <a href="https://sentry.io/?utm_source=github&utm_medium=logo" target="_blank">
